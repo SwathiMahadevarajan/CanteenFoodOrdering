@@ -42,7 +42,103 @@ filter: blur(6px);
   color: white;
   font-weight: bold;
   border: 3px solid #f1f1f1;
-  position: absolute;
+  position: absolute;<!DOCTYPE html>
+<html>
+<head>
+<title>To be Named</title>
+<style>
+ul {
+list-style-type: none;
+margin:0;
+padding:0;
+ overflow: hidden;
+
+}
+li {
+float:right;
+display:inline;
+font-family:Comic Sans MS;
+}
+li a{
+  display: block;
+  color: #000101;
+  text-align: center;
+  padding: 14px 16px;
+text-decoration:none;
+}
+li a:hover{
+background-color:black;
+color:white;
+}
+.bg{
+filter: blur(2px);
+background-repeat: no-repeat;
+position: relative;
+}
+.bg-text {
+color: white;
+border: 3px solid #A9A9A9;
+position: absolute;
+top:25%; 
+left: 50%;
+ transform: translate(-50%, -50%);
+width: 40%;
+padding: 20px;
+text-align: center;
+}
+#logo{
+float:left;
+font-family:Copperplate,Papyrus,fantasy;
+}
+#logo a{
+text-decoration:none;
+color:#808080;	
+}
+nav{
+position:sticky;
+}
+.bg-but{
+top:25%;
+}
+</style>
+</head>
+<body>
+<nav>
+<ul>
+<h1 id="logo"><a href='Cafeteria.html'>HomeSpun</a></h1>
+<li><a href='#'>About</a></li>
+<li><a href='#'>Services</a></li>
+<li><a href='#'>Contact Us</a></li>
+</ul>
+</nav>
+<div  style="max-width:500px">
+<div class="mySlides">
+  <img  class="bg" src="https://media.smallbiztrends.com/2016/11/Ceramics.jpg" style="width:100vw;height:60vh;">
+<div class="bg-text">Handlooms</div>
+
+</div>
+<div class="mySlides">
+<img class="bg" class="mySlides"  src="https://cdndrafts-01-2019.handweaving.net/site/Pages/handweaving.net-logo-image-notext.png" style="width:100vw;height:60vh;">
+<div class="bg-text">HandWeavers</div>
+</div>
+</div>
+</body>
+<script>
+var myIndex = 0;
+carousel();
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);
+}
+</script>
+</html>
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
