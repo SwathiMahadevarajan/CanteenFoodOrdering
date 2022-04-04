@@ -107,7 +107,7 @@ color:#808080;
     font-size: 1rem;
     letter-spacing: 1px;
     color:white;
-    background-color: #A9A9A9;
+    background-color: #707070;
     text-transform: uppercase;
     font-weight: 60;
     margin-top: 40px;
@@ -145,13 +145,16 @@ color:#808080;
     align-items: center;
  
 }
+.item:hover{
+box-shadow: 2px 2px 30px rgba(0,0,1,0.5);
+}
 
 #autoWidth{
     display: flex;
     justify-content: center !important;
     margin: 10px auto 40px auto;
 }
-.offers-heading{
+.Offers-heading{
     display:flex;
     justify-content: center;
     align-items:center;
@@ -167,7 +170,7 @@ color:#808080;
     margin-top: 40px;
     padding: 5px 30px;
     border: 1px solid #e0e0e0;
-    background-color: #A9A9A9; 
+    background-color: #707070; 
    font-family: 'Comic Sans MS';
 }
 .offers-heading{
@@ -232,7 +235,7 @@ text-decoration:none;
     font-weight: 400;
 }
 .product-box:hover{
-    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 30px rgba(0,0,1,0.5);
 }
 .add-cart{
     position: absolute;
@@ -263,4 +266,7 @@ text-decoration:none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.footer{
+background-color:#585858;
 }
