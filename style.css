@@ -8,7 +8,7 @@ font-family:Comic Sans MS;
   padding: 14px 16px;
 text-decoration:none;
 }
-.topnav a:hover{
+.link:hover{
 background-color: #585858;
 color:white;
 }
@@ -38,11 +38,13 @@ color:white;
   padding: 0 3.5rem 0 1.5rem;
   font-size: 1rem;
 }
-
+.Mic{
+    margin-left: -5rem;
+    width: 4.0rem;
+}
 #searchQuerySubmit {
-  width: 3.5rem;
-  height: 2.8rem;
-  margin-left: -3.5rem;
+  width: 4.0rem;
+  margin-left: -2.5rem;
   background: none;
   border: none;
   outline: none;
@@ -90,7 +92,7 @@ font-family:Copperplate,Papyrus,fantasy;
 
 #logo a{
 text-decoration:none;
-color:#808080;	
+color:#808080;  
 }
 
 
@@ -268,5 +270,41 @@ text-decoration:none;
     align-items: center;
 }
 .footer{
-background-color:#585858;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+     background-color: #585858;
+}
+.footer{
+ font-size: 1.2rem;
+    font-weight: 5;
+    text-transform: capitalize;
+    color:whitesmoke ;
+}
+.footer-links{
+ list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.footer-links li{
+        margin: 0 10px;
+}
+.footer-links a{
+     text-decoration: none;
+    color: black;
+    border: 1.5px solid black;
+    padding: 5px;
+    border-radius: 50%;
+}
+.footer-links a i{
+font-size: 1.1rem;
+    width: 20px;
+    transition: color .4s ease;
+}
+.footer-links a:hover i{
+    color: white;
 }
