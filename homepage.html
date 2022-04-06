@@ -150,6 +150,16 @@
             <li><a href="#"><i class="fa fa-youtube"></i></a></li>
             <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
          </ul>
+          <h4>Want to chat with us directly</h4>
+          <form name ="contact"action="#" onsubmit="return mailvalidation(document.contact.Mail);">
+             <label for="name">Enter Name:</label>
+             <input type="text" name="name" id="name" placeholder="Name"><br>
+            <label for="Mail">Enter Mail Id:</label>
+            <input type="text" name="Mail" id="Mail" placeholder="Mail"><br>
+            <label for="message">Explain your query:</label>
+            <textarea id="message" placeholder="message"></textarea><br>
+            <input type="submit" name="submit" value="Submit"/>
+         </form>
          </section>
 </body>
 <script>
@@ -166,5 +176,21 @@ function carousel() {
   x[myIndex-1].style.display = "block";  
   setTimeout(carousel, 4000);
 }; 
+function mailvalidation(inputText)
+{
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(inputText.value.match(mailformat))
+{
+var time=Date();
+  alert("Message sent\nYou will get the reply soon\nTiming:"+time);
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+document.contact.Mail.focus();
+return false;
+}
+};
 </script>
 </html>
