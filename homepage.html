@@ -4,13 +4,16 @@
 <title>To be Named</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="style.css">
+<meta name="google-signin-client_id" content="624075055213-k059koe63ms29dfdh5lttm14qifuffje.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 <body>
-    <h1 id="logo"><a href='homepage.html'>HomeSpun</a></h1>
+   <a href='homepage.html' id="logo">HomeSpun</a>
 <div class="topnav">
-   <a href="#contact"><i class="fa fa-sign-in" "link" style="font-size:24px"></i></a>
-   <a href="#about"><i class="fa fa-shopping-cart" "link" style="font-size:24px"></i></a>
-   <div class="search-container">
+  <a>Welcome Swathi</a>
+   <a href="#" onclick="document.getElementById('box').style.display='block'" ><i class="fa fa-sign-in" "link" style="font-size:24px"></i></a>
+   <a href="#cart"><i class="fa fa-shopping-cart" "link" style="font-size:24px"></i></a>
+  <div class="search-container">
       <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Search"/>
       <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
       <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="#666666" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 
@@ -18,8 +21,16 @@
 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
       </svg>
   </button>
-        
- </div>
+   </div>
+</div>
+<div id="box" class="login">
+ <form action="#" id="form" name="signin" onsubmit="return storelogincred(document.signin.uname,document.signin.pwd);">
+      <p class="uname"><input type="text" placeholder="username" name="uname"/></p>
+      <p class="pwd"><input type="password" placeholder="password" name="pwd"/></p>
+      <p><input type="submit" value="Sign in" id="button"/></p>
+     <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me</label>
+    </form>
 </div>
 <div  style="max-width:500px">
 <div class="mySlides">
@@ -147,9 +158,9 @@
          </ul>
           <h4>Want to chat with us directly</h4>
           <form name ="contact"action="#" onsubmit="return mailvalidation(document.contact.Mail);">
-             <input type="text" name="name" id="name" placeholder="Name"><br>
-            <input type="text" name="Mail" id="Mail" placeholder="Mail"><br>
-            <textarea id="message" placeholder="Query"></textarea><br>
+          <input type="text" name="name" id="name" placeholder="Name"><br>
+        <input type="text" name="Mail" id="Mail" placeholder="Mail"><br>
+            <textarea id="message" placeholder="Elaborate Your Query"></textarea><br>
             <input type="submit" name="submit" value="Submit"/>
          </form>
          </section>
@@ -183,6 +194,16 @@ alert("You have entered an invalid email address!");
 document.contact.Mail.focus();
 return false;
 }
+};
+var modal = document.getElementById('box');
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+function storelogincred(name,pass){
+document.cookie=name+"=" +pass+";" +30;
+alert("WELCOME");
 };
 </script>
 </html>
