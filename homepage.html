@@ -7,12 +7,12 @@
 <meta name="google-signin-client_id" content="624075055213-k059koe63ms29dfdh5lttm14qifuffje.apps.googleusercontent.com">
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
-<body>
+<body onload="checkCookie()">
    <a href='homepage.html' id="logo">HomeSpun</a>
 <div class="topnav">
-  <a>Welcome Swathi</a>
-   <a href="#" onclick="document.getElementById('box').style.display='block'" ><i class="fa fa-sign-in" "link" style="font-size:24px"></i></a>
-   <a href="#cart"><i class="fa fa-shopping-cart" "link" style="font-size:24px"></i></a>
+  <a >Welcome <div id="User">User</div></a>
+  <a href="#" onclick="document.getElementById('box').style.display='block'"  ><i class="fa fa-sign-in"  style="font-size:24px"></i></a >
+   <a href="#cart"><i class="fa fa-shopping-cart" style="font-size:24px"></i></a>
   <div class="search-container">
       <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Search"/>
       <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
@@ -25,12 +25,14 @@
 </div>
 <div id="box" class="login">
  <form action="#" id="form" name="signin" onsubmit="return storelogincred(document.signin.uname,document.signin.pwd);">
-      <p class="uname"><input type="text" placeholder="username" name="uname"/></p>
-      <p class="pwd"><input type="password" placeholder="password" name="pwd"/></p>
+    <div class="imgcontainer">
+     <img src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="Avatar" class="avatar">
+ </div>
+      <p id ="uname"><input type="text" placeholder="username" name="uname" required /></p>
+      <p id ="pwd"><input type="password" placeholder="password" name="pwd" required /></p>
       <p><input type="submit" value="Sign in" id="button"/></p>
-     <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me</label>
-    </form>
+     <label><input type="checkbox" checked="checked" name="remember" > Remember me</label>
+</form>
 </div>
 <div  style="max-width:500px">
 <div class="mySlides">
@@ -168,6 +170,7 @@
 <script>
 var myIndex = 0;
 carousel();
+
 function carousel() {
   var i;
   var x = document.getElementsByClassName("mySlides");
@@ -201,9 +204,45 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-function storelogincred(name,pass){
-document.cookie=name+"=" +pass+";" +30;
-alert("WELCOME");
+function storelogincred(name,pass,expires){
+document.cookie="username=" +name+";"+expires;
+document.cookie="password=" +pass+";"+expires;
+var user=document.getElementById("User");
+user.textContent=document.getElementById("uname").value;
+
 };
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+};
+
+function checkCookie() {
+  let username = getCookie("username");
+  if (username == "") {
+
+    document.getElementById('box').style.display='block';
+    username=document.getElementById('uname');
+      var  password=document.getElementById('pwd');
+
+    if (username != "" && username != null && password!="" && password!= null)
+      storelogincred(username, password, 30);
+    }
+    else{
+        var user=document.getElementById("User");
+user.textContent=document.getElementById("uname").value;
+    } 
+  };
+
 </script>
 </html>
