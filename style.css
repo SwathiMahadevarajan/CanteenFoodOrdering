@@ -38,10 +38,7 @@ color:white;
   padding: 0 3.5rem 0 1.5rem;
   font-size: 1rem;
 }
-.Mic{
-    margin-left: -5rem;
-    width: 4.0rem;
-}
+
 #searchQuerySubmit {
   width: 4.0rem;
   margin-left: -2.5rem;
@@ -88,15 +85,55 @@ font-family:Copperplate,Papyrus,fantasy;
 #logo{
 float:left;
 font-family:Copperplate,Papyrus,fantasy;
-}
-
-#logo a{
 text-decoration:none;
-color:#808080;  
+color:#808080; 
+font-size: 30px;
 }
 
+#box{
+display: none;
+position: fixed;
+overflow: auto;
+z-index: 1;
+width: 100%;
+height: 100%;
+left: 0;
+top: 0;
+background-color: rgb(0, 0, 0); 
+background-color: rgba(0, 0, 0, 0.4);
+}
+#form input[type=text],input[type=password]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: 'Comic Sans MS';
 
+}
+  #form{
+    background-color: #fefefe;
+  margin: 5% auto 15% auto; 
+  border: 1px solid #fff;
+  width: 30%;
+  height: 50%;
+}
+#button{
+    background-color:#585858;
+    color: white;
+    width: 100%;
+}
 
+img.avatar{
+  width: 25%;
+  border-radius: 50%;
+}
+.imgcontainer{
+    text-align: center;
+     margin: 0px 0 12px 0;
+  position: relative;
+}
 .feature-heading{
     display: flex;
     justify-content: center;
@@ -156,10 +193,11 @@ box-shadow: 2px 2px 30px rgba(0,0,1,0.5);
     justify-content: center !important;
     margin: 10px auto 40px auto;
 }
-.Offers-heading{
+.offers-heading{
     display:flex;
     justify-content: center;
     align-items:center;
+    flex-direction: column;
 }
 
 
@@ -175,12 +213,7 @@ box-shadow: 2px 2px 30px rgba(0,0,1,0.5);
     background-color: #707070; 
    font-family: 'Comic Sans MS';
 }
-.offers-heading{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+
 
 .offers-heading p{
     color: #808080;
@@ -276,13 +309,13 @@ text-decoration:none;
     flex-direction: column;
     text-align: center;
      background-color: #585858;
-}
-.footer{
- font-size: 1.2rem;
+      font-size: 1.2rem;
     font-weight: 5;
     text-transform: capitalize;
     color:whitesmoke ;
+    font-family: Comic Sans MS;
 }
+
 .footer-links{
  list-style: none;
     display: flex;
