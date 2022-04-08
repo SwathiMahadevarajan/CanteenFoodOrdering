@@ -7,7 +7,7 @@
 <meta name="google-signin-client_id" content="624075055213-k059koe63ms29dfdh5lttm14qifuffje.apps.googleusercontent.com">
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
-<body onload="checkCookie()">
+<body onload=checkCookie()>
    <a href='homepage.html' id="logo">HomeSpun</a>
 <div class="topnav">
   <a >Welcome <div id="User">User</div></a>
@@ -24,9 +24,9 @@
    </div>
 </div>
 <div id="box" class="login">
- <form action="#" id="form" name="signin" onsubmit="return storelogincred(document.signin.uname,document.signin.pwd);">
+ <form action="#" id="form" name="signin" onsubmit="return setCookie(document.signin.uname,document.signin.pwd,30);">
     <div class="imgcontainer">
-     <img src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="Avatar" class="avatar">
+     <a href="#"><img src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" alt="Avatar" class="avatar"></a>
  </div>
       <p id ="uname"><input type="text" placeholder="username" name="uname" required /></p>
       <p id ="pwd"><input type="password" placeholder="password" name="pwd" required /></p>
@@ -154,9 +154,8 @@
             <li><a href="#"><i class="fa fa-facebook"></i></a></li>         
             <li><a href="#"><i class="fa fa-envelope"></i></a></li>
             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+            <li><a href="https://youtu.be/T_FOvamXp5g" target="_blank"><i class="fa fa-youtube"></i></a></li>
+          
          </ul>
           <h4>Want to chat with us directly</h4>
           <form name ="contact"action="#" onsubmit="return mailvalidation(document.contact.Mail);">
@@ -204,13 +203,13 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-function storelogincred(name,pass,expires){
-document.cookie="username=" +name+";"+expires;
-document.cookie="password=" +pass+";"+expires;
-var user=document.getElementById("User");
-user.textContent=document.getElementById("uname").value;
-
+function setCookie(cname,cvalue,exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 };
+
 function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
@@ -228,21 +227,15 @@ function getCookie(cname) {
 };
 
 function checkCookie() {
-  let username = getCookie("username");
-  if (username == "") {
-
-    document.getElementById('box').style.display='block';
-    username=document.getElementById('uname');
-      var  password=document.getElementById('pwd');
-
-    if (username != "" && username != null && password!="" && password!= null)
-      storelogincred(username, password, 30);
-    }
-    else{
-        var user=document.getElementById("User");
-user.textContent=document.getElementById("uname").value;
-    } 
-  };
-
+  let user = getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+document.getElementById('box').style.display='block';
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+     }
+  }
+};
 </script>
 </html>
