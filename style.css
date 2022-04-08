@@ -1,9 +1,13 @@
+.topnav{
+  color:#585858;
+ background-color: #F68989; 
+}
 .topnav a{
 float:right;
 display:inline;
 font-family:Comic Sans MS;
   display: block;
-  color:#707070;
+  color:#585858;
   text-align: center;
   padding: 14px 16px;
 text-decoration:none;
@@ -100,29 +104,32 @@ height: 100%;
 left: 0;
 top: 0;
 background-color: rgb(0, 0, 0); 
-background-color: rgba(0, 0, 0, 0.4);
+background-color: rgba(0, 0, 0, 0.8);
 }
 #form input[type=text],input[type=password]{
-  width: 100%;
-  padding: 12px 20px;
+  width: 90%;
+padding: 12px 20px;
   margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
+border: 4px solid #ccc;
   box-sizing: border-box;
   font-family: 'Comic Sans MS';
+border-radius:10%;
 
 }
   #form{
+border-radius:10%;
     background-color: #fefefe;
   margin: 5% auto 15% auto; 
   border: 1px solid #fff;
   width: 30%;
-  height: 50%;
+  height: 55%;
 }
 #button{
-    background-color:#585858;
+    background-color:black;
     color: white;
-    width: 100%;
+    width: 20%;
+    font-family:Comic Sans MS;
+text-align:center;	
 }
 
 img.avatar{
@@ -145,8 +152,8 @@ img.avatar{
 .feature-heading h2{
     font-size: 1rem;
     letter-spacing: 1px;
-    color:white;
-    background-color: #707070;
+    color: #585858;
+   background-color: #F68989; 
     text-transform: uppercase;
     font-weight: 60;
     margin-top: 40px;
@@ -158,8 +165,9 @@ img.avatar{
     width:155px;
     height: 160px;
     margin: 0px 20px;
-    border-radius: 10px;
+    border-radius:100px;
     overflow: hidden;
+
 }
 
 .feature-box a img{
@@ -182,10 +190,12 @@ img.avatar{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
  
 }
 .item:hover{
-box-shadow: 2px 2px 30px rgba(0,0,1,0.5);
+
+box-shadow: 2px 2px 30px rgba(0,0,1,0.5) 
 }
 
 #autoWidth{
@@ -204,13 +214,13 @@ box-shadow: 2px 2px 30px rgba(0,0,1,0.5);
 .offers-heading strong{
     font-size: 1rem;
     letter-spacing: 1px;
-    color: #ffffff;
+    color: #585858;
     text-transform: uppercase;
     font-weight: 60;
     margin-top: 40px;
     padding: 5px 30px;
     border: 1px solid #e0e0e0;
-    background-color: #707070; 
+    background-color: #F68989; 
    font-family: 'Comic Sans MS';
 }
 
@@ -290,7 +300,7 @@ text-decoration:none;
  
 }
 .add-cart:hover{
-    background-color: #585858;
+    background-color: #F68989;
     transition: all ease 0.2s;
 }
 .product-box:hover .add-cart{
@@ -308,11 +318,11 @@ text-decoration:none;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-     background-color: #585858;
-      font-size: 1.2rem;
+     background-color: #F68989;
+      font-size: 1rem;
     font-weight: 5;
     text-transform: capitalize;
-    color:whitesmoke ;
+    color:#585858 ;
     font-family: Comic Sans MS;
 }
 
@@ -336,7 +346,8 @@ text-decoration:none;
 .footer-links a i{
 font-size: 1.1rem;
     width: 20px;
-    transition: color .4s ease;
+transition: color .4s ease;
+    
 }
 .footer-links a:hover i{
     color: white;
